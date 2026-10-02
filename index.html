@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="theme-color" content="#7ec8ff" />
+    <title>Nova Dash — Jellybean Ridge</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect rx='14' width='64' height='64' fill='%23ff4d6d'/%3E%3Cpath d='M36 8 18 36h14l-6 20 22-30H34z' fill='%23ffd23f'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="view"></div>
+    <div id="banner" aria-live="polite"></div>
+    <div id="toast" aria-live="polite"></div>
+
+    <section id="menu">
+      <div class="hero">
+        <p class="eyebrow">Ribbon Cup</p>
+        <h1>Nova Dash</h1>
+        <p class="track-name">Jellybean Ridge</p>
+      </div>
+      <div class="sheet">
+        <div class="sheet-copy">
+          <h2 id="racer-name">Quill Swift</h2>
+          <p id="racer-title">Featherweight Ace</p>
+          <p id="racer-blurb"></p>
+          <p id="record" class="record"></p>
+        </div>
+        <div id="cards" class="cards" role="listbox" aria-label="Choose a racer"></div>
+        <div class="menu-actions">
+          <button id="race" class="race-btn" type="button">Race!</button>
+          <p class="hint">Arrows choose a racer · Enter starts · Steer, drift, grab crates · 3 laps</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="hud" hidden>
+      <div class="hud-top">
+        <div class="place-block">
+          <div id="place" class="place">1st</div>
+          <div id="lap" class="lap">Lap 1/3</div>
+          <div id="speed" class="speed">0</div>
+        </div>
+        <div class="side-stack">
+          <canvas id="minimap" width="220" height="220" aria-hidden="true"></canvas>
+          <ol id="board" class="board"></ol>
+        </div>
+      </div>
+      <button id="pause" class="ghost" type="button">Pause</button>
+      <div id="pause-card" class="pause-card" hidden>
+        <h2>Paused</h2>
+        <button id="resume" class="race-btn" type="button">Resume</button>
+      </div>
+      <div class="item-dock">
+        <div id="drift" class="drift" hidden><span id="drift-fill"></span></div>
+        <div id="item" class="item empty" aria-live="polite">
+          <span id="item-icon"></span>
+          <span id="item-name">Empty</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="podium" hidden>
+      <div class="podium-card">
+        <p class="eyebrow">Ribbon Cup</p>
+        <h2 id="podium-title">You finished 1st</h2>
+        <p id="podium-time"></p>
+        <p id="podium-record" class="record"></p>
+        <ol id="results" class="board results"></ol>
+        <div class="menu-actions">
+          <button id="again" class="race-btn" type="button">Race again</button>
+          <button id="change" class="ghost" type="button">Change racer</button>
+        </div>
+      </div>
+    </section>
+
+    <div id="controls" hidden>
+      <button id="btn-left" type="button" aria-label="Steer left">◀</button>
+      <button id="btn-right" type="button" aria-label="Steer right">▶</button>
+      <button id="btn-brake" type="button" aria-label="Brake">Brake</button>
+      <button id="btn-drift" type="button" aria-label="Drift">Drift</button>
+      <button id="btn-item" type="button" aria-label="Use item">Item</button>
+    </div>
+    <button id="mute" class="mute" type="button" aria-label="Mute sound">Sound on</button>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
